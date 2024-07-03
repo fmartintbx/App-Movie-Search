@@ -2,8 +2,23 @@ import { useState } from "react"
 
 export  const MovieSearch = () => { 
     const[examine, setExamine] = useState("")
+    const[movies, setMovies]= useState([])
+   
     const handleInputChange = (e) => { 
         setExamine(e.target.value)
+    }
+
+    const handleSubmit = (e) => { 
+      e.preventDefault()
+      fetchMovies()
+    }
+
+    const fetchMovies = async() => { 
+      try{ 
+       const response = await fetch(``)
+      }catch(error){ 
+
+      }
     }
 
     return ( 
@@ -12,7 +27,7 @@ export  const MovieSearch = () => {
 
        <h1 className="title">Movie Search</h1>
 
-       <form> 
+       <form onSubmit = {handleSubmit}> 
         <input
          type="text"
          placeholder="Write a movie"
